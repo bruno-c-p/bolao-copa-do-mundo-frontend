@@ -1,0 +1,32 @@
+$primary-color-1: #1e040a;
+$primary-color-2: #3d0714;
+$primary-color-3: #5b0b1e;
+$primary-color-4: #7a0d28;
+$primary-color-5: #981032;
+$primary-color-6: #ac425a;
+$primary-color-7: #c07283;
+$primary-color-8: #d5a0ac;
+$primary-color-9: #ead0d6;
+
+$grayscale-color-1: #07070a;
+$grayscale-color-2: #111119;
+$grayscale-color-3: #191923;
+$grayscale-color-4: #2a2a36;
+$grayscale-color-5: #484857;
+$grayscale-color-6: #73737a;
+$grayscale-color-7: #a2a2a6;
+$grayscale-color-8: #d0d0d3;
+$grayscale-color-9: #e8e8e9;
+$white: #ffffff;
+
+$gray-gradient: linear-gradient(
+  180deg,
+  $grayscale-color-9 0%,
+  $grayscale-color-8 100%
+);
+
+$red-gradient: linear-gradient(
+  180deg,
+  $primary-color-5 0%,
+  $primary-color-3 100%
+);

@@ -1,0 +1,165 @@
+@use "./variables";
+
+@mixin device($device) {
+  @if $device == mobile {
+    @media (max-width: 480px) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $device == desktop {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+@mixin container {
+  max-width: 1440px;
+  margin: 0 4%;
+  gap: 40px;
+}
+
+@mixin content-box {
+  color: $white;
+  display: grid;
+  align-items: center;
+}
+
+@mixin img-wrapping($url) {
+  background-image: $url;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin button-style($background, $color) {
+  background: $background;
+  padding: 12px 0;
+  border: 0;
+  border-radius: 5px;
+  color: $color;
+}
+
+@mixin button-text {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+
+@mixin small-button-text {
+  font-weight: 600;
+  font-size: 0.625rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+
+@mixin title-text {
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 4.5rem;
+}
+
+@mixin subtitle-text {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+@mixin allcaps-bigger-text {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+@mixin bigger-text {
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+
+@mixin bigger-medium-text {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+}
+
+@mixin regular-semibold-text {
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+@mixin regular-bigger-medium-text {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+@mixin regular-medium-text {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@mixin regular-text {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@mixin allcaps-regular-text {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+}
+
+@mixin small-text {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+@mixin link-text {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-decoration-line: underline;
+}
+
+@mixin image-right-rounded-borders {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@mixin auth-background {
+  background-color: variables.$white;
+  border-radius: 5px;
+}
+
+@mixin background-shadow-color {
+  background-color: variables.$grayscale-color-8;
+}
+
+@mixin sombra-fundo {
+  @include background-shadow-color;
+  box-shadow: 6px 6px 0px variables.$grayscale-color-1;
+}
+
+@mixin games-shadow {
+  @include background-shadow-color;
+  box-shadow: 3px 5px 5px 1px rgba(17, 17, 25, 0.05);
+}
+
+@mixin tip-shadow {
+  @include background-shadow-color;
+  box-shadow: 0px -6px 5px rgba(0, 0, 0, 0.1);
+}

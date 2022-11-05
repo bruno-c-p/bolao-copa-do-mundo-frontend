@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "auth";
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
+
+* {
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: $grayscale-color-6;
+  opacity: 1;
+}
+
+body {
+  background-color: $grayscale-color-9;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.invalid-button {
+  @include button-text;
+  @include button-style($gray-gradient, $grayscale-color-6);
+}
+
+.valid-button {
+  @include button-text;
+  @include button-style($red-gradient, $primary-color-8);
+  cursor: pointer;
+  transition: 0.5s ease-out;
+
+  &:active {
+    background: $primary-color-5;
+  }
+}

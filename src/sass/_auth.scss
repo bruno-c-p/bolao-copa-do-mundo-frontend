@@ -1,0 +1,158 @@
+.center-div {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-container {
+  width: 70vw;
+  @include container;
+  @include device(desktop) {
+    width: 100%;
+  }
+}
+
+.single-auth-container {
+  width: 40vw;
+  @include container;
+  @include device(desktop) {
+    width: 50vw;
+  }
+  @include device(tablet) {
+    width: 60vw;
+  }
+  @include device(mobile) {
+    width: 100%;
+  }
+}
+
+.auth-content {
+  @include content-box;
+  @include auth-background;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  @include device(desktop) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.single-auth-content {
+  @include content-box;
+  @include auth-background;
+  grid-template-columns: 1fr;
+}
+
+.auth-form {
+  width: 100%;
+}
+
+.auth-form-content {
+  display: flex;
+  justify-content: center;
+  padding: clamp(32px, 1em + 3vw, 100px) clamp(32px, 1em + 3vw, 100px);
+}
+
+.auth-fieldset {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.auth-img {
+  @include image-right-rounded-borders;
+  @include device(desktop) {
+    display: none;
+  }
+}
+
+.subtitle-auth {
+  @include subtitle-text;
+  color: $primary-color-3;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.email-text {
+  max-width: 40ch;
+  margin: 2.5rem auto 2rem;
+  text-align: center;
+  @include regular-text;
+  color: $grayscale-color-6;
+
+  em {
+    color: $grayscale-color-4;
+  }
+}
+
+.label-text {
+  @include regular-bigger-medium-text;
+  color: $grayscale-color-5;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.form-input {
+  @include small-text;
+  padding: 14px 12px;
+  border: 0;
+  background-color: $grayscale-color-9;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $grayscale-color-8;
+  }
+
+  &:focus {
+    outline-color: $grayscale-color-1;
+    outline-style: dashed;
+    outline-width: 2px;
+  }
+}
+
+.logo {
+  text-align: center;
+  color: $primary-color-2;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  padding-bottom: 60px;
+}
+
+.forgot-password-text {
+  @include link-text;
+  color: $grayscale-color-6;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 32px;
+  text-align: right;
+  transition: 0.3s ease-in;
+
+  &:hover {
+    color: $primary-color-5;
+  }
+}
+
+.register-text {
+  @include small-text;
+  color: $grayscale-color-6;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.register-link-text {
+  @include link-text;
+  color: $primary-color-6;
+  transition: 0.3s ease-in;
+
+  &:hover {
+    color: $primary-color-4;
+  }
+}
+
+.button-margin {
+  margin-top: 2rem;
+}
