@@ -1,0 +1,5 @@
+@import "mixins";
+
+.img-wrapper {
+  @include img-wrapping(url("../../../assets/auth/register-image.webp"));
+}
