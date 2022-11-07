@@ -156,3 +156,8 @@
 .button-margin {
   margin-top: 2rem;
 }
+
+.validation-message {
+  @include small-text;
+  color: $primary-color-6;
+}

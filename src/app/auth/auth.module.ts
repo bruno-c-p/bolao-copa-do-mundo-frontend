@@ -1,3 +1,4 @@
+import { ValidationMessageModule } from './../components/validation-message/validation-message.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 

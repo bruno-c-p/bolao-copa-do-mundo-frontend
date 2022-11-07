@@ -25,12 +25,14 @@ img {
   max-width: 100%;
 }
 
-.invalid-button {
+.button:disabled {
+  cursor: default;
+  pointer-events: none;
   @include button-text;
   @include button-style($gray-gradient, $grayscale-color-6);
 }
 
-.valid-button {
+.button {
   @include button-text;
   @include button-style($red-gradient, $primary-color-8);
   cursor: pointer;
