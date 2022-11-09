@@ -37,8 +37,4 @@ img {
   @include button-style($red-gradient, $primary-color-8);
   cursor: pointer;
   transition: 0.5s ease-out;
-
-  &:active {
-    background: $primary-color-5;
-  }
 }
