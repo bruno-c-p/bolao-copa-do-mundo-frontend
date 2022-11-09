@@ -2,19 +2,26 @@
   <div class="auth-container">
     <article class="auth-content">
       <div class="auth-form-content">
-        <form class="auth-form">
+        <form class="auth-form" [formGroup]="registerFormGroup" (submit)="register()">
           <h1 class="logo">bolão&lt;copadomundo/&gt;</h1>
           <fieldset class="auth-fieldset">
             <legend class="subtitle-auth">Registrar-se</legend>
 
             <label class="label-text" for="apelido">Apelido</label>
-            <input class="form-input" type="text" id="apelido" name="apelido" placeholder="Digite seu apelido">
+            <input formControlName="nickname" class="form-input" type="text" id="apelido" name="apelido" placeholder="Digite seu apelido">
+            <app-validation-message *ngIf="registerFormGroup.get('nickname')?.errors?.['required'] && registerFormGroup.get('email')?.touched" message="Apelido obrigatório."></app-validation-message>
+            <app-validation-message *ngIf="registerFormGroup.get('nickname')?.errors?.['existingUser']" message="Usuário já existe."></app-validation-message>
+            <app-validation-message *ngIf="registerFormGroup.get('nickname')?.errors?.['maxlength']" message="O usuário deve conter 30 caracteres ou menos."></app-validation-message>
 
             <label class="label-text" for="email">Email</label>
-            <input class="form-input" type="text" id="email" name="email" placeholder="Digite seu email">
+            <input formControlName="email" class="form-input" type="text" id="email" name="email" placeholder="Digite seu email">
+            <app-validation-message *ngIf="registerFormGroup.get('email')?.errors?.['required'] && registerFormGroup.get('email')?.touched" message="Email obrigatório."></app-validation-message>
+            <app-validation-message *ngIf="registerFormGroup.get('email')?.errors?.['existingUser']" message="Email já existe."></app-validation-message>
 
             <label class="label-text" for="senha">Senha</label>
-            <input class="form-input" type="password" id="senha" name="senha" placeholder="Digite sua senha">
+            <input formControlName="password" class="form-input" type="password" id="senha" name="senha" placeholder="Digite sua senha">
+            <app-validation-message *ngIf="registerFormGroup.get('password')?.errors?.['required'] && registerFormGroup.get('email')?.touched" message="Senha obrigatória."></app-validation-message>
+            <app-validation-message *ngIf="registerFormGroup.get('password')?.errors?.['minlength']" message="A senha deve conter mais de 8 caracteres."></app-validation-message>
 
             <button class="button button-margin" type="submit">Criar conta</button>
             <p class="register-text">Já tem uma conta? <a class="register-link-text">Fazer login.</a></p>
