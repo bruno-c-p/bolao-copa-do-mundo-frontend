@@ -10,10 +10,12 @@
             <p class="email-text">Digite o código que enviamos para o email:<br><em>usuario@usuario.com</em></p>
 
             <label class="label-text" for="código">Código</label>
-            <input class="form-input" type="text" id="código" name="código" placeholder="Digite o código recebido por email">
-            <a class="forgot-password-text">Reenviar o código</a>
+            <input #codeModel="ngModel" [(ngModel)]="userEmailCode.code" name="code" class="form-input" type="text" id="código" placeholder="Digite o código recebido por email" required="true" minlength="6" maxlength="6">
+            <app-validation-message *ngIf="codeModel.errors?.['required'] && codeModel.touched" message="Código obrigatório."></app-validation-message>
+            <app-validation-message *ngIf="codeModel.errors?.['minlength'] || codeModel.errors?.['maxlength']  && codeModel.touched" message="O código deve ter 6 caracteres."></app-validation-message>
+            <a (click)="resendConfirmationCode()" class="forgot-password-text">Reenviar o código</a>
 
-            <button class="button" type="submit">Verificar</button>
+            <button (click)="verify()" class="button" type="submit">Verificar</button>
           </fieldset>
         </form>
       </div>
