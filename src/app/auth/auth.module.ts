@@ -23,7 +23,7 @@ import { NgModule } from '@angular/core';
           ),
       },
       {
-        path: 'email-code',
+        path: 'email-code/:token',
         loadChildren: () =>
           import('./email-code/email-code.module').then(
             (module) => module.EmailCodeModule
@@ -37,7 +37,7 @@ import { NgModule } from '@angular/core';
           ),
       },
       {
-        path: 'password-reset',
+        path: 'password-reset/:token',
         loadChildren: () =>
           import('./password-reset/password-reset.module').then(
             (module) => module.PasswordResetModule

@@ -15,6 +15,7 @@
             <label class="label-text" for="senha">Senha</label>
             <input formControlName="password" class="form-input" type="password" id="senha" name="senha" placeholder="Digite sua senha">
             <app-validation-message *ngIf="loginFormGroup.get('password')?.errors?.['required'] && loginFormGroup.get('password')?.touched" message="Senha obrigatória."></app-validation-message>
+
             <a [routerLink]="['/auth', 'email-password-reset']" class="forgot-password-text">Esqueceu sua senha?</a>
 
             <button [disabled]="loginFormGroup.invalid" class="button" type="submit">Entrar</button>
