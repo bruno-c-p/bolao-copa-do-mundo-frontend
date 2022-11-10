@@ -1,3 +1,4 @@
+import { MenuModule } from './menu/menu.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MenuModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
