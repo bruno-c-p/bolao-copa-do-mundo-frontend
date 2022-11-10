@@ -15,6 +15,7 @@
 
             <label class="label-text" for="email">Email</label>
             <input formControlName="email" class="form-input" type="text" id="email" name="email" placeholder="Digite seu email">
+            <app-validation-message *ngIf="registerFormGroup.get('email')?.errors?.['email'] && registerFormGroup.get('email')?.touched" message="Email inválido."></app-validation-message>
             <app-validation-message *ngIf="registerFormGroup.get('email')?.errors?.['required'] && registerFormGroup.get('email')?.touched" message="Email obrigatório."></app-validation-message>
             <app-validation-message *ngIf="registerFormGroup.get('email')?.errors?.['existingUser']" message="Email já existe."></app-validation-message>
 
@@ -24,7 +25,7 @@
             <app-validation-message *ngIf="registerFormGroup.get('password')?.errors?.['minlength']" message="A senha deve conter mais de 8 caracteres."></app-validation-message>
 
             <button class="button button-margin" type="submit">Criar conta</button>
-            <p class="register-text">Já tem uma conta? <a class="register-link-text">Fazer login.</a></p>
+            <p class="register-text">Já tem uma conta? <a [routerLink]="['/auth', 'login']" routerLinkActive="router-link-active" class="register-link-text">Fazer login.</a></p>
           </fieldset>
         </form>
       </div>

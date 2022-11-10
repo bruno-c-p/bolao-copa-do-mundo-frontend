@@ -19,13 +19,19 @@ export class RegisterComponent implements OnInit {
     this.registerFormGroup = this.formBuilder.group({
       nickname: [
         '',
-        [Validators.required, Validators.maxLength(30)],
-        [this.userService.nicknameAlreadyExists()],
+        {
+          validators: [Validators.required, Validators.maxLength(30)],
+          asyncValidators: [this.userService.nicknameAlreadyExists()],
+          updateOn: 'blur',
+        },
       ],
       email: [
         '',
-        [Validators.required, Validators.email],
-        [this.userService.emailAlreadyExists()],
+        {
+          validators: [Validators.required, Validators.email],
+          asyncValidators: [this.userService.emailAlreadyExists()],
+          updateOn: 'blur',
+        },
       ],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
