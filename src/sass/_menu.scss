@@ -1,0 +1,80 @@
+.menu-border {
+  border-bottom: 2px solid $grayscale-color-8;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+}
+
+.menu-link {
+  display: block;
+  @include allcaps-bigger-text;
+  color: $primary-color-2;
+  cursor: pointer;
+  padding: 2rem 0;
+  border-bottom: 2px solid transparent;
+
+  &:hover {
+    border-bottom: 2px solid $grayscale-color-8;
+  }
+}
+
+.active {
+  border-bottom: 2px solid $primary-color-5;
+
+  &:hover {
+    border-bottom: 2px solid $primary-color-5;
+  }
+}
+
+.active-admin-button {
+  border: none !important;
+  background-color: $primary-color-7 !important;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.profile {
+  border-left: 2px solid $grayscale-color-8;
+  padding-left: 1.25rem;
+}
+
+.nickname {
+  @include regular-text;
+  color: $primary-color-2;
+}
+
+.user-points {
+  @include regular-semibold-text;
+  color: $primary-color-5;
+}
+
+.admin-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.admin-button {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+  @include small-text;
+  @include button-style($grayscale-color-8, $grayscale-color-2);
+  padding: 6px 12px;
+  cursor: pointer;
+}

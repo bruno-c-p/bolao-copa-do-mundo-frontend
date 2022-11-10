@@ -1,0 +1,31 @@
+<div class="menu-border">
+  <nav class="menu-container">
+    <ul class="links-container">
+      <li><a class="menu-link" [routerLink]="['/matches']" routerLinkActive="active">Partidas</a></li>
+      <li><a class="menu-link" [routerLink]="['/ranking']" routerLinkActive="active">Ranking</a></li>
+    </ul>
+    <ul class="profile-container">
+      <li>
+        <div class="profile">
+          <p class="nickname">brunocp</p>
+          <p class="user-points">10 PTS</p>
+        </div>
+      </li>
+      <li>
+        <div class="admin-buttons">
+          <button [routerLink]="['/logs']" routerLinkActive="active-admin-button" class="admin-button">
+            <img src="assets/menu/log.svg" alt="" width="16" height="16">
+            Logs
+          </button>
+          <button [routerLink]="['/results']" routerLinkActive="active-admin-button" class="admin-button">
+            <img src="assets/menu/arrow.svg" alt="" width="16" height="16">
+            Lançar
+          </button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

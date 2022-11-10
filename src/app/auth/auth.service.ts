@@ -36,6 +36,7 @@ export class AuthService {
       .post('http://localhost:8080/auth/activation-code', user)
       .subscribe({
         next: () => {
+          this.toastr.success('Email verificado com sucesso!');
           this.router.navigate(['/auth', 'login']);
         },
         error: (error) => {

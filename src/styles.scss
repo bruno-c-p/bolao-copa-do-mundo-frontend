@@ -2,12 +2,17 @@
 @import "variables";
 @import "mixins";
 @import "auth";
+@import "menu";
 
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
 
 * {
   font-family: "Outfit", sans-serif;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 ::placeholder {
@@ -17,6 +22,11 @@
 
 body {
   background-color: $grayscale-color-9;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 2.5rem auto;
 }
 
 img {
