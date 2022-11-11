@@ -8,6 +8,7 @@ import { first, map, switchMap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { UserPassword } from '../models/user-password';
 import { UserRanking } from '../models/user-ranking';
+import { User } from '../models/user';
 
 const USER_RESOURCES = environment.url_api + '/users';
 
@@ -82,5 +83,15 @@ export class UserService {
     return this.httpClient.get<UserRanking[]>(`${USER_RESOURCES}/ranking`, {
       params,
     });
+  }
+
+  findAll(params?: any) {
+    return this.httpClient.get<User[]>(`${USER_RESOURCES}`, {
+      params,
+    });
+  }
+
+  setAdmin(userId: number) {
+    return this.httpClient.patch(`${USER_RESOURCES}/${userId}/admin`, {});
   }
 }

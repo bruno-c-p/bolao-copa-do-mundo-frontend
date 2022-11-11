@@ -15,4 +15,11 @@ export class MatchService {
   findAll(params?: any) {
     return this.httpClient.get<Match[]>(MATCH_RESOURCES, { params });
   }
+
+  changeMatchResult(result: string, matchId: number) {
+    return this.httpClient.patch(`${MATCH_RESOURCES}/${matchId}/finish`, {
+      result,
+      matchId,
+    });
+  }
 }
