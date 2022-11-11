@@ -1,8 +1,7 @@
+import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { UserPassword } from 'src/app/models/user-password';
-import { AuthService } from '../auth.service';
 import { samePasswordValidator } from './same-password.validator';
 
 @Component({
@@ -15,7 +14,7 @@ export class PasswordResetComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private authService: AuthService,
+    private userService: UserService,
     private formBuilder: FormBuilder
   ) {}
 
@@ -41,6 +40,6 @@ export class PasswordResetComponent implements OnInit {
     if (this.passwordFormGroup.invalid || this.passwordFormGroup.pending) {
       return;
     }
-    this.authService.resetPassword(this.passwordFormGroup.value);
+    this.userService.resetPassword(this.passwordFormGroup.value);
   }
 }
