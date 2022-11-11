@@ -22,21 +22,20 @@ const routes: Routes = [
         loadChildren: () =>
           import('./ranking/ranking.module').then((m) => m.RankingModule),
       },
-      {
-        path: 'results',
-        loadChildren: () =>
-          import('./results/results.module').then((m) => m.ResultsModule),
-      },
-      {
-        path: 'logs',
-        loadChildren: () =>
-          import('./logs/logs.module').then((m) => m.LogsModule),
-      },
     ],
   },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'errors',
+    loadChildren: () =>
+      import('./errors/errors.module').then((m) => m.ErrorsModule),
+  },
+  {
+    path: '**',
+    redirectTo: 'errors/404',
   },
 ];
 

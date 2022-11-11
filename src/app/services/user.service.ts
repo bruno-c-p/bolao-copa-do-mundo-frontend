@@ -5,6 +5,11 @@ import { Injectable } from '@angular/core';
 import { UserRegister } from '../models/user-register';
 import { AbstractControl } from '@angular/forms';
 import { first, map, switchMap } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { UserPassword } from '../models/user-password';
+import { UserRanking } from '../models/user-ranking';
+
+const USER_RESOURCES = environment.url_api + '/users';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +23,7 @@ export class UserService {
 
   register(user: UserRegister): void {
     this.httpClient
-      .post('http://localhost:8080/users', user, { responseType: 'text' })
+      .post(USER_RESOURCES, user, { responseType: 'text' })
       .subscribe({
         next: (token) => {
           this.router.navigate(['/auth', 'email-code', token]);
@@ -29,10 +34,24 @@ export class UserService {
       });
   }
 
+  resetPassword({ password, token }: UserPassword): void {
+    this.httpClient
+      .patch(`${USER_RESOURCES}/password-reset`, { password, token })
+      .subscribe({
+        next: () => {
+          this.toastr.success('Senha alterada com sucesso!');
+          this.router.navigate(['/auth', 'login']);
+        },
+        error: (error) => {
+          console.log({ password, token });
+
+          this.toastr.error('Erro inesperado!');
+        },
+      });
+  }
+
   verifyEmail(email: string) {
-    return this.httpClient.get(
-      `http://localhost:8080/users/exists/email/${email}`
-    );
+    return this.httpClient.get(`${USER_RESOURCES}/exists/email/${email}`);
   }
 
   emailAlreadyExists() {
@@ -46,9 +65,7 @@ export class UserService {
   }
 
   verifyNickname(nickname: string) {
-    return this.httpClient.get(
-      `http://localhost:8080/users/exists/nickname/${nickname}`
-    );
+    return this.httpClient.get(`${USER_RESOURCES}/exists/nickname/${nickname}`);
   }
 
   nicknameAlreadyExists() {
@@ -59,5 +76,11 @@ export class UserService {
         first()
       );
     };
+  }
+
+  ranking(params?: any) {
+    return this.httpClient.get<UserRanking[]>(`${USER_RESOURCES}/ranking`, {
+      params,
+    });
   }
 }

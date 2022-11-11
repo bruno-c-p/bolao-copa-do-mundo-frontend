@@ -5,8 +5,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { UserEmailCode } from '../models/user-email-code';
-import { UserPassword } from '../models/user-password';
+import { environment } from 'src/environments/environment';
 
+const AUTH_RESOURCES = environment.url_api + '/auth';
 const KEY = 'token';
 
 @Injectable({
@@ -20,7 +21,7 @@ export class AuthService {
   ) {}
 
   authenticate(user: UserLogin): void {
-    this.httpClient.post<Token>('http://localhost:8080/auth', user).subscribe({
+    this.httpClient.post<Token>(AUTH_RESOURCES, user).subscribe({
       next: ({ token }: Token) => {
         this.saveToken(token);
         this.router.navigate(['/home', '']);
@@ -32,22 +33,20 @@ export class AuthService {
   }
 
   verifyEmailCode(user: UserEmailCode): void {
-    this.httpClient
-      .post('http://localhost:8080/auth/activation-code', user)
-      .subscribe({
-        next: () => {
-          this.toastr.success('Email verificado com sucesso!');
-          this.router.navigate(['/auth', 'login']);
-        },
-        error: (error) => {
-          this.toastr.error(error.error);
-        },
-      });
+    this.httpClient.post(`${AUTH_RESOURCES}/activation-code`, user).subscribe({
+      next: () => {
+        this.toastr.success('Email verificado com sucesso!');
+        this.router.navigate(['/auth', 'login']);
+      },
+      error: (error) => {
+        this.toastr.error(error.error);
+      },
+    });
   }
 
   resendEmailCode(user: UserEmailCode): void {
     this.httpClient
-      .post('http://localhost:8080/auth/resend-activation-code', user)
+      .post(`${AUTH_RESOURCES}/resend-activation-code`, user)
       .subscribe({
         next: () => {
           this.toastr.success('Email enviado com sucesso!');
@@ -60,7 +59,7 @@ export class AuthService {
 
   sendPasswordResetLink(email: string): void {
     this.httpClient
-      .post('http://localhost:8080/auth/email-password-reset', { email })
+      .post(`${AUTH_RESOURCES}/email-password-reset`, { email })
       .subscribe({
         next: () => {
           this.toastr.success('Email enviado com sucesso!');
@@ -68,22 +67,6 @@ export class AuthService {
         },
         error: (error) => {
           this.toastr.error('Email não encontrado!');
-        },
-      });
-  }
-
-  resetPassword({ password, token }: UserPassword): void {
-    this.httpClient
-      .patch('http://localhost:8080/users/password-reset', { password, token })
-      .subscribe({
-        next: () => {
-          this.toastr.success('Senha alterada com sucesso!');
-          this.router.navigate(['/auth', 'login']);
-        },
-        error: (error) => {
-          console.log({ password, token });
-
-          this.toastr.error('Erro inesperado!');
         },
       });
   }
