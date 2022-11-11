@@ -1,7 +1,7 @@
-import { Team } from './team';
+import { Match } from './match';
 import { TipType } from './tip-type';
 
 export interface TipEvent {
-  team?: Team;
+  match: Match;
   type: TipType;
 }
