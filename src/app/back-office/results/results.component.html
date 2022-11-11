@@ -1,0 +1,16 @@
+<h1>Lançamento de resultados</h1>
+<p>Tela para lançamento dos resultados dos jogos diários da fase de grupos da copa.</p>
+
+<ul>
+  <li *ngFor="let match of matches">
+    {{ match | json }}
+
+    <select [(ngModel)]="match.result" name="" id="">
+      <option ngValue="VICTORY_HOME">Vitória {{ match.teams[0].team }}</option>
+      <option ngValue="DRAW">Empate</option>
+      <option ngValue="VICTORY_AWAY">Vitória {{ match.teams[1].team }}</option>
+    </select>
+
+    <button (click)="setResult(match)" type="button">Lançar</button>
+  </li>
+</ul>
