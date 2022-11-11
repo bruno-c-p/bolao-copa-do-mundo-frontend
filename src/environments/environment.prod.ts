@@ -1,4 +1,4 @@
 export const environment = {
-  url_api: 'http://localhost:8080',
+  url_api: 'https://bolao-copa-do-mundo-api.herokuapp.com',
   production: true,
 };
