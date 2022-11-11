@@ -1,0 +1,86 @@
+@import "variables";
+@import "mixins";
+
+.ranking-title {
+  @include title-text;
+  color: $primary-color-4;
+  text-align: center;
+
+  @include device(tablet) {
+    font-size: 2.5rem;
+  }
+}
+
+.ranking-text {
+  @include regular-text;
+  color: $grayscale-color-6;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.ranking-list {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $white;
+  max-width: 600px;
+  margin: 2.5rem auto;
+}
+
+.ranking-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  border-bottom: 2px solid $grayscale-color-9;
+}
+
+.ranking-profile {
+  display: flex;
+  align-items: center;
+
+  .position {
+    @include subtitle-text;
+    color: $grayscale-color-2;
+
+    @include device(mobile) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.name {
+  @include bigger-medium-text;
+  color: $primary-color-6;
+  margin-left: 2rem;
+
+  @include device(mobile) {
+    font-size: 1.25rem;
+  }
+}
+
+.ranking-points {
+  display: flex;
+  align-items: center;
+
+  .points {
+    @include subtitle-text;
+    color: $primary-color-6;
+
+    @include device(mobile) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .text {
+    @include bigger-medium-text;
+    color: $grayscale-color-5;
+    margin-left: 0.625rem;
+
+    @include device(mobile) {
+      font-size: 1rem;
+    }
+  }
+}

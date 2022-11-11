@@ -1,1 +1,15 @@
-<p>ranking works!</p>
+<h1 class="ranking-title">Ranking Geral</h1>
+<p class="ranking-text">Os 10 melhores colocados.</p>
+
+<ul class="ranking-list">
+  <li class="ranking-item" *ngFor="let user of users; let i = index">
+    <div class="ranking-profile">
+      <p class="position">{{ i + 1 }}</p>
+      <p class="name">{{ user.nickname }}</p>
+    </div>
+    <div class="ranking-points">
+      <p class="points">{{ user.points }}</p>
+      <p class="text">pontos</p>
+    </div>
+  </li>
+</ul>
