@@ -1,0 +1,206 @@
+.matches-title {
+  @include subtitle-text;
+  color: $grayscale-color-4;
+  margin-bottom: 1.5rem;
+}
+
+.matches-today {
+  max-width: 960px;
+  overflow: auto;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3.75rem;
+}
+
+.match-today-card {
+  @include games-shadow;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  min-width: 215px;
+}
+
+.flags-date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flags {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.flag-img {
+  width: 45px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid $grayscale-color-2;
+}
+
+.date-hour {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hour {
+  @include regular-bigger-medium-text;
+  color: $primary-color-2;
+}
+
+.date {
+  @include small-button-text;
+  color: $primary-color-6;
+}
+
+.team-names {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.team {
+  @include regular-medium-text;
+  color: $grayscale-color-3;
+}
+
+.tip-options {
+  display: flex;
+  justify-content: stretch;
+  gap: 4px;
+
+  @include device(mobile) {
+    width: 100%;
+  }
+}
+
+.tip-button {
+  cursor: pointer;
+  @include small-button-text;
+  color: $grayscale-color-1;
+  background: none;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 5px 10px;
+  border: 1px solid $grayscale-color-8;
+  border-radius: 5px;
+}
+
+.draw-button {
+  border: none;
+  background-color: $primary-color-9;
+  color: $primary-color-2;
+}
+
+.date-filter {
+  border: 1px solid $grayscale-color-5;
+  border-radius: 5px;
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 32px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.date-picker {
+  @include regular-medium-text;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  label {
+    @include device(mobile) {
+      display: none;
+    }
+  }
+}
+
+.date-filter-button {
+  border: none;
+  border-radius: 2px;
+  padding: 6px 12px;
+  cursor: pointer;
+  color: $grayscale-color-8;
+  background-color: $grayscale-color-4;
+  display: block;
+}
+
+/* ALL-MATCHES */
+
+.all-matches-container {
+  max-width: 960px;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background-color: $white;
+  border-radius: 5px;
+  border: 1px solid $grayscale-color-9;
+
+  @include device(mobile) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.all-matches-flag {
+  width: 30px;
+  height: 20px;
+  border-radius: 2px;
+  border: 1px solid $grayscale-color-2;
+}
+
+.all-matches-teams {
+  display: flex;
+  width: 40%;
+
+  @include device(mobile) {
+    width: 100%;
+  }
+}
+
+.left {
+  justify-content: end;
+}
+
+.right {
+  justify-content: start;
+}
+
+.left,
+.right {
+  @include device(mobile) {
+    justify-content: center;
+  }
+}
+
+.all-match-date {
+  @include small-text;
+  color: $grayscale-color-5;
+}
+
+span {
+  display: block;
+}
+
+.team-name,
+.x-icon {
+  @include small-text;
+  padding: 0 12px;
+}
+
+.team-name {
+  @include device(tablet) {
+    display: none;
+  }
+  @include device(mobile) {
+    display: inherit;
+  }
+}

@@ -1,0 +1,21 @@
+.not-found-text {
+  @include subtitle-text;
+  color: $grayscale-color-6;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.not-found-number {
+  @include title-text;
+  color: $primary-color-6;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.not-found-link {
+  @include small-button-text;
+  color: $primary-color-6;
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+}

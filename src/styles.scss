@@ -3,6 +3,8 @@
 @import "mixins";
 @import "auth";
 @import "menu";
+@import "errors";
+@import "matches";
 
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
 
@@ -26,6 +28,7 @@ body {
 
 .container {
   max-width: 1440px;
+  padding: 0 40px;
   margin: 2.5rem auto;
 }
 

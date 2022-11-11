@@ -8,12 +8,26 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 2.5rem;
+
+  @include device(mobile) {
+    padding: 0 1.5rem;
+  }
 }
 
 .links-container {
   display: flex;
   align-items: center;
   gap: 8rem;
+
+  @include device(tablet) {
+    gap: 2rem;
+  }
+}
+
+.button-text {
+  @include device(tablet) {
+    display: none;
+  }
 }
 
 .menu-link {
@@ -23,6 +37,11 @@
   cursor: pointer;
   padding: 2rem 0;
   border-bottom: 2px solid transparent;
+
+  @include device(tablet) {
+    padding: 1rem 0;
+    font-size: 1rem;
+  }
 
   &:hover {
     border-bottom: 2px solid $grayscale-color-8;
@@ -46,11 +65,18 @@
   display: flex;
   align-items: center;
   gap: 4rem;
+  @include device(tablet) {
+    gap: 2rem;
+  }
+  @include device(mobile) {
+    gap: 1rem;
+  }
 }
 
 .profile {
   border-left: 2px solid $grayscale-color-8;
   padding-left: 1.25rem;
+  margin-left: 1.25rem;
 }
 
 .nickname {
@@ -65,8 +91,15 @@
 
 .admin-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+
+  @include device(mobile) {
+    margin: 0.5rem;
+    min-width: 40px;
+    gap: 0.5rem;
+  }
 }
 
 .admin-button {
