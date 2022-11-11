@@ -1,16 +1,29 @@
-<h1>Lançamento de resultados</h1>
-<p>Tela para lançamento dos resultados dos jogos diários da fase de grupos da copa.</p>
+<div class="results-header">
+  <h1 class="results-title">Lançamento de resultados</h1>
+  <p class="results-text">Tela para lançamento dos resultados dos jogos diários da fase de grupos da copa.</p>
+</div>
 
 <ul>
   <li *ngFor="let match of matches">
-    {{ match | json }}
+    <!-- {{ match | json }} -->
 
-    <select [(ngModel)]="match.result" name="" id="">
-      <option ngValue="VICTORY_HOME">Vitória {{ match.teams[0].team }}</option>
-      <option ngValue="DRAW">Empate</option>
-      <option ngValue="VICTORY_AWAY">Vitória {{ match.teams[1].team }}</option>
-    </select>
+    <div class="match-details">
+      <div class="match-info">
+        <div class="teams">
+          <span>{{ match.teams[0].team }}</span>
+          <span>X</span>
+          <span>{{ match.teams[1].team }}</span>
+        </div>
+        <div class="result">
+          <select class="input-result" [(ngModel)]="match.result" name="" id="">
+            <option ngValue="VICTORY_HOME">Vitória {{ match.teams[0].team }}</option>
+            <option ngValue="DRAW">Empate</option>
+            <option ngValue="VICTORY_AWAY">Vitória {{ match.teams[1].team }}</option>
+          </select>
 
-    <button (click)="setResult(match)" type="button">Lançar</button>
+          <button class="set-result-button" (click)="setResult(match)" type="button">Lançar</button>
+        </div>
+      </div>
+    </div>
   </li>
 </ul>

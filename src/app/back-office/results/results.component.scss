@@ -1,0 +1,67 @@
+@import "mixins";
+@import "variables";
+
+.results-header {
+  margin-bottom: 2rem;
+}
+
+.results-title {
+  @include subtitle-text;
+  color: $primary-color-5;
+
+  @include device(mobile) {
+    font-size: 24px;
+  }
+}
+
+.results-text {
+  @include regular-text;
+  color: $grayscale-color-5;
+}
+
+.match-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.teams {
+  display: flex;
+  gap: 1rem;
+}
+
+.match-info {
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 960px;
+  width: 100%;
+  span {
+    display: block;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  background-color: $white;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.input-result {
+  width: 100%;
+}
+
+.result {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.set-result-button {
+  display: block;
+  margin-top: 4px;
+  @include button-style($grayscale-color-5, $grayscale-color-9);
+  @include small-button-text;
+  padding: 6px 12px;
+}
