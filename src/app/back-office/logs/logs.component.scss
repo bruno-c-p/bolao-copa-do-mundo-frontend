@@ -1,0 +1,32 @@
+@import "mixins";
+@import "variables";
+
+.logs-header {
+  margin-bottom: 2rem;
+}
+
+.logs-title {
+  @include subtitle-text;
+  color: $primary-color-5;
+}
+
+.logs-text {
+  @include regular-text;
+  color: $grayscale-color-5;
+}
+
+.log-info {
+  max-width: 960px;
+  width: 100%;
+  span {
+    display: block;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  background-color: $white;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}

@@ -1,8 +1,8 @@
-<nav>
-  <ul>
-    <li><a [routerLink]="['/back-office', 'admin']" routerLinkActive="back-office-active">Admin</a></li>
-    <li><a [routerLink]="['/back-office', 'logs']" routerLinkActive="back-office-active">Logs</a></li>
-    <li><a [routerLink]="['/back-office', 'results']" routerLinkActive="back-office-active">Results</a></li>
+<nav class="back-office-container">
+  <ul class="back-office-links">
+    <li><a class="back-office link" [routerLink]="['/back-office', 'admin']" routerLinkActive="back-office-active">Admin</a></li>
+    <li><a class="back-office link" [routerLink]="['/back-office', 'logs']" routerLinkActive="back-office-active">Logs</a></li>
+    <li><a class="back-office link" [routerLink]="['/back-office', 'results']" routerLinkActive="back-office-active">Results</a></li>
   </ul>
 </nav>
 <router-outlet></router-outlet>

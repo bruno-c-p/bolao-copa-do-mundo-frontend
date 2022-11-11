@@ -1,11 +1,19 @@
-<p>Torne algum usuário em Admin</p>
-<label for="user-search">Busque o usuário pelo apelido</label>
-<input #iptNickname type="text">
-<button type="button" (click)="findUserByNickname(iptNickname.value)">Buscar</button>
+<div class="admin-header">
+  <h1 class="admin-title">Torne algum usuário em Admin</h1>
+  <label for="user-search">Busque o usuário pelo apelido</label>
+</div>
+<div class="search">
+  <input #iptNickname type="text">
+  <button class="admin-button" type="button" (click)="findUserByNickname(iptNickname.value)">Buscar</button>
+</div>
 
 <ul>
   <li *ngFor="let user of users">
-    {{ user | json }}
-    <button (click)="setAdmin(user.id)" type="button">Tornar admin</button>
+    <div class="user-info">
+      <span>{{ user.id }}</span>
+      <span>{{ user.nickname }}</span>
+      <span>{{ user.email }}</span>
+      <button class="set-adm-button" (click)="setAdmin(user.id)" type="button">Tornar admin</button>
+    </div>
   </li>
 </ul>

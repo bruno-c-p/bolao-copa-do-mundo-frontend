@@ -1,5 +1,7 @@
-<h1>Auditoria de logs</h1>
-<p>Monitore qualquer ação feita pelos usuários do sistema.</p>
+<div class="logs-header">
+  <h1 class="logs-title">Auditoria de logs</h1>
+  <p class="logs-text">Monitore qualquer ação feita pelos usuários do sistema.</p>
+</div>
 
 <div class="date-filter">
   <img src="assets/filter.svg" alt="Ícone de filtro">
@@ -11,6 +13,13 @@
 </div>
 <ul>
   <li *ngFor="let log of allLogs">
-    {{ log | json }}
+    <div class="log-info">
+      <div class="log-date">
+        <span class="log-date">{{ log.date | date: 'dd/MM/yyyy' }}</span>
+        <span class="log-time">{{ log.date | date: 'HH:mm' }}</span>
+      </div>
+      <span class="log-user">{{ log.user }}</span>
+      <span class="log-action">{{ log.action }}</span>
+    </div>
   </li>
 </ul>

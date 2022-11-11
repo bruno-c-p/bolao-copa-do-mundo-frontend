@@ -18,6 +18,6 @@
     </div>
   </div>
   <ul class="all-matches-list">
-    <app-match *ngFor="let match of allMatches" [match]="match"></app-match>
+    <app-match *ngFor="let match of allMatches" [match]="match" (selectedTip)="onSelectedTip($event)"></app-match>
   </ul>
 </section>

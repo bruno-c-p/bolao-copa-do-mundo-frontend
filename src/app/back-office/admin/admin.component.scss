@@ -1,0 +1,66 @@
+@import "mixins";
+@import "variables";
+
+.admin-header {
+  margin-bottom: 2rem;
+}
+
+.admin-title {
+  @include subtitle-text;
+  color: $primary-color-5;
+
+  @include device(mobile) {
+    font-size: 24px;
+  }
+}
+
+.admin-text {
+  @include regular-text;
+  color: $grayscale-color-5;
+}
+
+.search {
+  margin-bottom: 1.25rem;
+
+  input,
+  button {
+    width: 100%;
+    display: block;
+    padding: 12px 24px;
+    margin-bottom: 4px;
+  }
+}
+
+.user-info {
+  flex-wrap: wrap;
+  max-width: 960px;
+  width: 100%;
+  span {
+    display: block;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  background-color: $white;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.admin-button {
+  @include button-style($red-gradient, $primary-color-9);
+  @include small-button-text;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.set-adm-button {
+  margin-top: 4px;
+  width: 100%;
+  @include button-style($grayscale-color-5, $grayscale-color-9);
+  @include small-button-text;
+  padding: 12px 24px;
+}

@@ -1,0 +1,64 @@
+@import "variables";
+@import "mixins";
+
+.tip-card {
+  background-color: $white;
+  flex-direction: column;
+  max-width: 350px;
+  border-radius: 5px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  gap: 1.25rem;
+
+  span {
+    display: block;
+  }
+}
+
+.teams {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.team {
+  @include regular-semibold-text;
+  color: $grayscale-color-4;
+}
+
+.tip-body-text {
+  @include small-button-text;
+  color: $primary-color-2;
+}
+
+.result {
+  display: flex;
+  gap: 1rem;
+  background-color: $primary-color-9;
+  padding: 4px;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.result-text {
+  @include small-text;
+  color: $primary-color-5;
+}
+
+.points {
+  background-color: $primary-color-5;
+  color: $primary-color-9;
+  padding: 4px 14px;
+  border-radius: 5px;
+}
+
+.tip-button {
+  @include button-style($red-gradient, $primary-color-9);
+  @include small-button-text;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}

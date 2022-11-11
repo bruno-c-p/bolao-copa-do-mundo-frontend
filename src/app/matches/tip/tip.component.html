@@ -1,13 +1,23 @@
 <div class="tip-card">
   <div class="tip-header">
-    <span class="close">
-      {{ tip.match.teams[0].team }} vs {{ tip.match.teams[1].team }}
-    </span>
+    <div class="teams">
+      <span class="team">{{ tip.match.teams[0].team }}</span>
+      <div class="vs">vs</div>
+      <span class="team">{{ tip.match.teams[1].team }}</span>
+    </div>
   </div>
   <div class="tip-body">
-    {{ tip.type }}
+    <span class="tip-body-text">Resultado</span>
+    <div class="result">
+      <div class="result-name">
+        <span class="result-text">{{ tip.type }}</span>
+      </div>
+      <div class="points">
+        <span>1</span>
+      </div>
+    </div>
   </div>
   <div class="tip-footer">
-    <button type="button" (click)="confirmTip()"> Confirmar Aposta </button>
+    <button class="tip-button" type="button" (click)="confirmTip()"> Confirmar Aposta </button>
   </div>
 </div>

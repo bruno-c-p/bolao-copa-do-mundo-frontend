@@ -12,8 +12,8 @@
     <span class="team-name">{{ match.teams[1].team }}</span>
   </div>
   <div class="tip-options">
-    <button class="tip-button">{{ match.teams[0].acronym }} <span class="tip-point">1</span></button>
-    <button class="tip-button draw-button">EMP<span class="tip-point">1</span></button>
-    <button class="tip-button">{{ match.teams[1].acronym }} <span class="tip-point">1</span></button>
+    <button class="tip-button" [disabled]="matchFinished(match)" (click)="selectTip({ match, type: 'VICTORY_HOME' })">{{ match.teams[0].acronym }} <span class="tip-point">1</span></button>
+    <button class="tip-button draw-button" [disabled]="matchFinished(match)" (click)="selectTip({ match, type: 'DRAW' })">EMP<span class="tip-point">1</span></button>
+    <button class="tip-button" [disabled]="matchFinished(match)" (click)="selectTip({ match, type: 'VICTORY_AWAY' })">{{ match.teams[1].acronym }} <span class="tip-point">1</span></button>
   </div>
 </article>
