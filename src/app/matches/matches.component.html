@@ -1,9 +1,23 @@
-<div>
-  <div>
-    <section></section>
-    <section></section>
-  </div>
-  <div>
+<section class="today-games">
+  <h1 class="matches-title">Jogos de hoje</h1>
+  <ul class="matches-today">
+    <app-match-today *ngFor="let match of matchesToday" [match]="match" (selectedTip)="onSelectedTip($event)"></app-match-today>
+  </ul>
+</section>
 
+<app-tip></app-tip>
+
+<section class="all-matches">
+  <h1 class="matches-title">Todos os jogos</h1>
+  <div class="date-filter">
+    <img src="assets/filter.svg" alt="Ícone de filtro">
+    <div class="date-picker">
+      <label for="date-picker">Filtrar data:</label>
+      <input [(ngModel)]="datepicker" id="date-picker" name="date-picker" type="date">
+      <button type="button" (click)="getMatchesByDate()" class="date-filter-button">Buscar</button>
+    </div>
   </div>
-</div>
+  <ul class="all-matches-list">
+    <app-match *ngFor="let match of allMatches" [match]="match"></app-match>
+  </ul>
+</section>

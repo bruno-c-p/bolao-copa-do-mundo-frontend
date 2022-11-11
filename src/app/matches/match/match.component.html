@@ -1,0 +1,19 @@
+<article class="all-matches-container">
+  <div class="match-date">
+    <span class="all-match-date">{{ match.date | date: 'dd/MM' }} - {{ match.date | date: 'HH:mm' }}</span>
+  </div>
+  <div class="all-matches-teams left">
+    <span class="team-name">{{ match.teams[0].team }}</span>
+    <img class="all-matches-flag" [src]="match.teams[0].flagUrl" [alt]="'Bandeira da seleção ' + match.teams[0].team" width="45" height="30">
+  </div>
+  <span class="x-icon">X</span>
+  <div class="all-matches-teams right">
+    <img class="all-matches-flag" [src]="match.teams[1].flagUrl" [alt]="'Bandeira da seleção ' + match.teams[1].team" width="45" height="30">
+    <span class="team-name">{{ match.teams[1].team }}</span>
+  </div>
+  <div class="tip-options">
+    <button class="tip-button">{{ match.teams[0].acronym }} <span class="tip-point">1</span></button>
+    <button class="tip-button draw-button">EMP<span class="tip-point">1</span></button>
+    <button class="tip-button">{{ match.teams[1].acronym }} <span class="tip-point">1</span></button>
+  </div>
+</article>

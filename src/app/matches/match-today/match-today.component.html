@@ -1,0 +1,20 @@
+<article class="match-today-card">
+  <div class="flags-date">
+    <div class="flags">
+      <img class="flag-img" *ngFor="let team of match.teams" [src]="team.flagUrl" [alt]="'Bandeira da seleção ' + team.team" width="45" height="30">
+    </div>
+    <div class="date-hour">
+      <span class="hour">{{ match.date | date: 'HH:mm' }}</span>
+      <span class="date">{{ match.date | date: 'dd/MM' }}</span>
+    </div>
+  </div>
+  <div class="team-names">
+    <span class="team">{{ match.teams[0].team }}</span>
+    <span class="team">{{ match.teams[1].team }}</span>
+  </div>
+  <div class="tip-options">
+    <button class="tip-button" (click)="selectTip({ team: match.teams[0], type: 'VICTORY_HOME' })">{{ match.teams[0].acronym }} <span class="tip-point">1</span></button>
+    <button class="tip-button draw-button" (click)="selectTip({ type: 'DRAW' })">EMP<span class="tip-point">1</span></button>
+    <button class="tip-button" (click)="selectTip({ team: match.teams[1], type: 'VICTORY_AWAY' })">{{ match.teams[1].acronym }} <span class="tip-point">1</span></button>
+  </div>
+</article>
