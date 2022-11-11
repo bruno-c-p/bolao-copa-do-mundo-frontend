@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { UserEmailCode } from '../models/user-email-code';
 import { environment } from 'src/environments/environment';
+import jwtDecode from 'jwt-decode';
+import { Jwt } from '../models/jwt';
 
 const AUTH_RESOURCES = environment.url_api + '/auth';
 const KEY = 'token';
@@ -24,7 +26,7 @@ export class AuthService {
     this.httpClient.post<Token>(AUTH_RESOURCES, user).subscribe({
       next: ({ token }: Token) => {
         this.saveToken(token);
-        this.router.navigate(['/home', '']);
+        this.router.navigate(['/matches']);
       },
       error: (error) => {
         this.toastr.error(error.error);
@@ -79,11 +81,30 @@ export class AuthService {
     localStorage.setItem(KEY, token);
   }
 
-  private deleteToken() {
+  public deleteToken() {
     localStorage.removeItem(KEY);
+  }
+
+  getJwt() {
+    return jwtDecode(this.getToken()) as Jwt;
   }
 
   hasToken() {
     return !!this.getToken();
+  }
+
+  isAutheticated(): boolean {
+    let data: Jwt;
+    try {
+      data = jwtDecode(this.getToken()) as Jwt;
+    } catch (error) {
+      return false;
+    }
+
+    if (!!data && !(Date.now() >= data.exp * 1000)) {
+      return true;
+    }
+
+    return false;
   }
 }

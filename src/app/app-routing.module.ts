@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from './guards/admin.guard';
+import { AuthenticatedGuard } from './guards/authenticated.guard';
+import { UnauthenticatedGuard } from './guards/unauthenticated.guard';
 import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
@@ -22,11 +25,24 @@ const routes: Routes = [
         loadChildren: () =>
           import('./ranking/ranking.module').then((m) => m.RankingModule),
       },
+      {
+        path: 'back-office',
+        loadChildren: () =>
+          import('./back-office/back-office.module').then(
+            (m) => m.BackOfficeModule
+          ),
+        canActivate: [AdminGuard],
+        canActivateChild: [AdminGuard],
+      },
     ],
+    canActivate: [AuthenticatedGuard],
+    canActivateChild: [AuthenticatedGuard],
   },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    canActivate: [UnauthenticatedGuard],
+    canActivateChild: [UnauthenticatedGuard],
   },
   {
     path: 'errors',

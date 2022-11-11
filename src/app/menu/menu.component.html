@@ -7,13 +7,21 @@
     <ul class="profile-container">
       <li>
         <div class="profile">
-          <p class="nickname">brunocp</p>
-          <p class="user-points">10 PTS</p>
+          <p class="nickname">
+            {{ jwt.nickname }}
+          </p>
+          <p class="user-points">
+            {{ jwt.points }} PTS
+          </p>
         </div>
       </li>
       <li>
         <div class="admin-buttons">
-          <button [routerLink]="['/results']" routerLinkActive="active-admin-button" class="admin-button">
+          <button (click)="logout()" class="admin-button">
+            <img src="assets/menu/logout.svg" alt="" width="16" height="16">
+            <span class="button-text">Sair</span>
+          </button>
+          <button *ngIf="userIsAdmin()" [routerLink]="['/back-office']" routerLinkActive="active-admin-button" class="admin-button">
             <img src="assets/menu/back-office-icon.svg" alt="" width="15" height="16">
             <span class="button-text">Back-office</span>
           </button>
