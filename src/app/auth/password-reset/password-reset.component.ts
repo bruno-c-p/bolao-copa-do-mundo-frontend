@@ -36,7 +36,6 @@ export class PasswordResetComponent implements OnInit {
   }
 
   resetPassword(): void {
-    console.log(this.passwordFormGroup.value);
     if (this.passwordFormGroup.invalid || this.passwordFormGroup.pending) {
       return;
     }
