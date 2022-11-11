@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ResultsComponent } from './results.component';
+import { ForbiddenComponent } from './forbidden.component';
 
-describe('ResultsComponent', () => {
-  let component: ResultsComponent;
-  let fixture: ComponentFixture<ResultsComponent>;
+describe('ForbiddenComponent', () => {
+  let component: ForbiddenComponent;
+  let fixture: ComponentFixture<ForbiddenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResultsComponent ]
+      declarations: [ ForbiddenComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ResultsComponent);
+    fixture = TestBed.createComponent(ForbiddenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
