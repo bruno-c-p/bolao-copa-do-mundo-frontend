@@ -13,6 +13,7 @@ export class MatchesComponent implements OnInit {
   allMatches!: Match[];
   matchesToday!: Match[];
   datepicker!: string;
+  selectedTip!: TipEvent;
 
   constructor(private matchService: MatchService) {}
 
@@ -38,5 +39,7 @@ export class MatchesComponent implements OnInit {
       });
   }
 
-  onSelectedTip(event: TipEvent) {}
+  onSelectedTip(event: TipEvent) {
+    this.selectedTip = event;
+  }
 }

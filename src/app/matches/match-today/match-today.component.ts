@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Match } from 'src/app/models/match';
 
 import { TipEvent } from '../../models/tip-event';
 
@@ -8,7 +9,7 @@ import { TipEvent } from '../../models/tip-event';
   styleUrls: ['./match-today.component.scss'],
 })
 export class MatchTodayComponent implements OnInit {
-  @Input() match: any;
+  @Input() match!: Match;
   @Output() selectedTip = new EventEmitter<TipEvent>();
 
   constructor() {}
@@ -17,5 +18,9 @@ export class MatchTodayComponent implements OnInit {
 
   selectTip(tip: TipEvent) {
     this.selectedTip.emit(tip);
+  }
+
+  matchFinished(match: Match) {
+    return match.result !== 'NOT_PLAYED';
   }
 }

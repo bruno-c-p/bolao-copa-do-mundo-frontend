@@ -13,8 +13,8 @@
     <span class="team">{{ match.teams[1].team }}</span>
   </div>
   <div class="tip-options">
-    <button class="tip-button" (click)="selectTip({ team: match.teams[0], type: 'VICTORY_HOME' })">{{ match.teams[0].acronym }} <span class="tip-point">1</span></button>
-    <button class="tip-button draw-button" (click)="selectTip({ type: 'DRAW' })">EMP<span class="tip-point">1</span></button>
-    <button class="tip-button" (click)="selectTip({ team: match.teams[1], type: 'VICTORY_AWAY' })">{{ match.teams[1].acronym }} <span class="tip-point">1</span></button>
+    <button class="tip-button" [disabled]="matchFinished(match)" (click)="selectTip({ match, type: 'VICTORY_HOME' })">{{ match.teams[0].acronym }} <span class="tip-point">1</span></button>
+    <button class="tip-button draw-button" [disabled]="matchFinished(match)" (click)="selectTip({ match, type: 'DRAW' })">EMP<span class="tip-point">1</span></button>
+    <button class="tip-button" [disabled]="matchFinished(match)" (click)="selectTip({ match, type: 'VICTORY_AWAY' })">{{ match.teams[1].acronym }} <span class="tip-point">1</span></button>
   </div>
 </article>

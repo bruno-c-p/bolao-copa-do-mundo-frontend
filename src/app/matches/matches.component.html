@@ -5,7 +5,7 @@
   </ul>
 </section>
 
-<app-tip></app-tip>
+<app-tip *ngIf="!!selectedTip" [tip]="selectedTip"></app-tip>
 
 <section class="all-matches">
   <h1 class="matches-title">Todos os jogos</h1>
