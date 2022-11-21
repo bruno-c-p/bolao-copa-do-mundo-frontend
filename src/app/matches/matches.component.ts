@@ -20,7 +20,7 @@ export class MatchesComponent implements OnInit {
   ngOnInit(): void {
     this.matchService
       .findAll({
-        date: new Date('2022-11-26T00:00:00.000Z').toISOString().split('T')[0],
+        date: new Date().toISOString().split('T')[0],
       })
       .subscribe((matches) => {
         this.matchesToday = matches;
