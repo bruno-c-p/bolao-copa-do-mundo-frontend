@@ -1,27 +1,53 @@
-# BolaoCopaDoMundo
+<h1 align="center" style="font-weight: bold;">Project name 💻</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
+<p align="center">
+ <a href="#technologies">Technologies</a> • 
+ <a href="#started">Getting Started</a> •
+</p>
 
-## Development server
+<p align="center">
+    <b>Simple description of what your project do or how to use it</b>
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<h2 id="layout">🎨 Layout</h2>
 
-## Code scaffolding
+<p align="center">
+    <img src="https://github.com/bruno-c-p/bolao-copa-do-mundo-frontend/assets/62653989/a008687b-a28b-4e17-9142-cde71d36aa44" width="600px">
+</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<h2 id="technologies">💻 Technologies</h2>
 
-## Build
+- HTML
+- SCSS
+- Angular
+- Typescript
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<h2 id="started">🚀 Getting started</h2>
 
-## Running unit tests
+Here you describe how to run your project locally
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<h3>Prerequisites</h3>
 
-## Running end-to-end tests
+Here you list all prerequisites necessary for running your project. For example:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [NodeJS](https://nodejs.org/en)
+- [Angular](https://angular.io/)
+- [Git](https://git-scm.com/)
 
-## Further help
+<h3>Cloning</h3>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Simply run:
+
+```bash
+git clone https://github.com/bruno-c-p/bolao-copa-do-mundo-frontend
+```
+
+<h3>Starting</h3>
+
+How to start your project
+
+```bash
+cd bolao-copa-do-mundo-frontend
+npm i
+ng serve
+```
