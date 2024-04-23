@@ -1,4 +1,4 @@
-<h1 align="center" style="font-weight: bold;">Project name 💻</h1>
+<h1 align="center" style="font-weight: bold;">🪙 Bolão Copa do Mundo 2022 ⚽</h1>
 
 <p align="center">
  <a href="#technologies">Technologies</a> • 
@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-    <b>Simple description of what your project do or how to use it</b>
+    <b>Final project for a trainee program by <i><a href="https://www.wises.com.br/">Wise</a></i>. One month to complete the project and meet the requirements.</b>
 </p>
 
 <h2 id="layout">🎨 Layout</h2>
