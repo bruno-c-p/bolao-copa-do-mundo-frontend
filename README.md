@@ -17,10 +17,7 @@
 
 <h2 id="technologies">💻 Technologies</h2>
 
-- HTML
-- SCSS
-- Angular
-- Typescript
+[![My Skills](https://skillicons.dev/icons?i=html,scss,angular,typescript)](https://skillicons.dev)
 
 <h2 id="started">🚀 Getting started</h2>
 
